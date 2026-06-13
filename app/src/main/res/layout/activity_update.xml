@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".UpdateActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp">
+
+        <!-- TITLE -->
+        <TextView
+            android:id="@+id/textTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Update Bill"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="#166D08"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <!-- MONTH -->
+        <TextView
+            android:id="@+id/textMonth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select Month"
+            android:textStyle="bold"
+            android:textColor="#166D08"
+            android:layout_marginTop="30dp"
+            app:layout_constraintTop_toBottomOf="@id/textTitle"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <Spinner
+            android:id="@+id/spinnerMonthUpdate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#166D08"
+            app:layout_constraintTop_toBottomOf="@id/textMonth"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <View
+            android:id="@+id/monthLine"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:background="#166D08"
+            app:layout_constraintTop_toBottomOf="@id/spinnerMonthUpdate"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <!-- UNIT -->
+        <TextView
+            android:id="@+id/textUnit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Electricity Unit Used"
+            android:textStyle="bold"
+            android:textColor="#166D08"
+            android:layout_marginTop="25dp"
+            app:layout_constraintTop_toBottomOf="@id/monthLine"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <EditText
+            android:id="@+id/editUnitUpdate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Enter unit (1 - 1000)"
+            android:inputType="number"
+            android:backgroundTint="#166D08"
+            app:layout_constraintTop_toBottomOf="@id/textUnit"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <!-- REBATE -->
+        <TextView
+            android:id="@+id/textRebate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rebate Percentage"
+            android:textStyle="bold"
+            android:textColor="#166D08"
+            android:layout_marginTop="25dp"
+            app:layout_constraintTop_toBottomOf="@id/editUnitUpdate"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <Spinner
+            android:id="@+id/spinnerRebateUpdate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#166D08"
+            app:layout_constraintTop_toBottomOf="@id/textRebate"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <View
+            android:id="@+id/rebateLine"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:background="#166D08"
+            app:layout_constraintTop_toBottomOf="@id/spinnerRebateUpdate"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <!-- CALCULATE BUTTON -->
+        <Button
+            android:id="@+id/btnCalculateUpdate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="CALCULATE"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:backgroundTint="#FFC800"
+            android:layout_marginTop="230dp"
+            app:layout_constraintTop_toBottomOf="@id/rebateLine"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <!-- TOTAL CHARGES -->
+        <TextView
+            android:id="@+id/textTotalLabelUpdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total Charges"
+            android:textStyle="bold"
+            android:textColor="#166D08"
+            android:textSize="16sp"
+            android:layout_marginTop="30dp"
+            app:layout_constraintTop_toBottomOf="@id/rebateLine"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+            android:id="@+id/textTotalUpdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="RM 0.00"
+            android:textStyle="bold"
+            android:textColor="#166D08"
+            android:textSize="26sp"
+            android:layout_marginTop="5dp"
+            app:layout_constraintTop_toBottomOf="@id/textTotalLabelUpdate"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <!-- FINAL COST -->
+        <TextView
+            android:id="@+id/textFinalLabelUpdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Final Cost After Rebate"
+            android:textStyle="bold"
+            android:textColor="#166D08"
+            android:textSize="16sp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toBottomOf="@id/textTotalUpdate"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+            android:id="@+id/textFinalUpdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="RM 0.00"
+            android:textStyle="bold"
+            android:textColor="#166D08"
+            android:textSize="38sp"
+            android:layout_marginTop="5dp"
+            app:layout_constraintTop_toBottomOf="@id/textFinalLabelUpdate"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <!-- SAVE BUTTON -->
+        <Button
+            android:id="@+id/btnSaveUpdate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="SAVE UPDATE"
+            android:textStyle="bold"
+            android:textColor="#FFC800"
+            android:backgroundTint="#166D08"
+            android:layout_marginTop="100dp"
+            app:layout_constraintTop_toBottomOf="@id/textFinalUpdate"            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</ScrollView>
